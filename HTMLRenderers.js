@@ -4,9 +4,14 @@ import {
 	TouchableOpacity,
 	Text,
 	View
-} from 'react-native'
-import HTMLStyles from './HTMLStyles'
-import HTMLImage from './HTMLImage'
+} from 'react-native';
+
+import {
+	Container
+} from 'native-base';
+
+import HTMLStyles from './HTMLStyles';
+import HTMLImage from './HTMLImage';
 
 export default {
   /**
@@ -79,15 +84,18 @@ export default {
 		).filter((s) => s !== undefined)
 
 		return (
-			<View>
+			<View style={{
+				paddingTop: 12,
+				paddingRight: 20,
+				paddingBottom: 12,
+				paddingLeft: 20,
+			}}>
 				{
 					children.map((child, index) => {
 						return (
-							<View key={index}>
-								<Text {...passProps} style={style}>
-									{child}
-								</Text>
-							</View>
+							<Text {...passProps} key={index} style={style}>
+								{child}
+							</Text>
 						)
 					})
 				}
@@ -101,20 +109,8 @@ export default {
 		).filter((s) => s !== undefined)
 
 		return (
-			<View>
-				<ScrollView>
-					{
-						children.map((child, index) => {
-							return (
-								<View key={index}>
-									<Text {...passProps} style={style}>
-										{child}
-									</Text>
-								</View>
-							)
-						})
-					}
-				</ScrollView>
+			<View style={style} {...passProps}>
+				{children}
 			</View>
 		)
 	}
