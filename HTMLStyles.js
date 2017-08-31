@@ -16,13 +16,15 @@ const RNImageStylePropTypes = Object.keys(_RNImageStylePropTypes)
 const STYLESETS = Object.freeze({
   VIEW: 'view',
   TEXT: 'text',
-  IMAGE: 'image'
+  IMAGE: 'image',
+  BLOCKQUOTE: 'blockquote',
 })
 
 const stylePropTypes = {}
 stylePropTypes[STYLESETS.VIEW] = Object.assign({}, RNViewStylePropTypes)
 stylePropTypes[STYLESETS.TEXT] = Object.assign({}, RNViewStylePropTypes, RNTextStylePropTypes)
 stylePropTypes[STYLESETS.IMAGE] = Object.assign({}, RNViewStylePropTypes, RNImageStylePropTypes)
+stylePropTypes[STYLESETS.BLOCKQUOTE] = Object.assign({}, RNViewStylePropTypes)
 
 class HTMLStyles {
   /* ****************************************************************************/
