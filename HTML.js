@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
-import { View } from 'react-native'
+import { View, ViewPropTypes } from 'react-native'
 import htmlparser2 from 'htmlparser2'
 import HTMLElement from './HTMLElement'
 import HTMLTextNode from './HTMLTextNode'
@@ -16,7 +16,7 @@ export default class HTML extends PureComponent {
   static propTypes = {
     html: PropTypes.string.isRequired,
     htmlStyles: PropTypes.object,
-    containerStyle: View.propTypes.style,
+    containerStyle: ViewPropTypes ? ViewPropTypes.style : View.propTypes.style,
     onLinkPress: PropTypes.func,
     imagesMaxWidth: PropTypes.number,
     renderers: PropTypes.object.isRequired
